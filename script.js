@@ -48,19 +48,23 @@ function showPage(page){
 // ENVELOPE
 // =========================================
 
-const envelope=document.getElementById("envelope");
+const envelope = document.getElementById("envelope");
 
-envelope.addEventListener("click",()=>{
+if(envelope){
 
-    envelope.classList.add("open");
+    envelope.addEventListener("click",()=>{
 
-    setTimeout(()=>{
+        envelope.classList.add("open");
 
-        showPage(letter);
+        setTimeout(()=>{
 
-    },1300);
+            showPage(letter);
 
-});
+        },1300);
+
+    });
+
+}
 
 // =========================================
 // BUTTONS
