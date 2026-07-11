@@ -4,21 +4,21 @@
 
 const petals = document.getElementById("petals");
 
-for (let i = 0; i < 35; i++) {
+for(let i=0;i<35;i++){
 
-    const petal = document.createElement("div");
+    const petal=document.createElement("div");
 
-    petal.className = "petal";
+    petal.className="petal";
 
-    petal.innerHTML = "🌸";
+    petal.innerHTML="🌸";
 
-    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.left=Math.random()*100+"vw";
 
-    petal.style.fontSize = (18 + Math.random() * 14) + "px";
+    petal.style.fontSize=(18+Math.random()*14)+"px";
 
-    petal.style.animationDuration = (8 + Math.random() * 6) + "s";
+    petal.style.animationDuration=(8+Math.random()*6)+"s";
 
-    petal.style.animationDelay = Math.random() * 5 + "s";
+    petal.style.animationDelay=Math.random()*5+"s";
 
     petals.appendChild(petal);
 
@@ -28,101 +28,52 @@ for (let i = 0; i < 35; i++) {
 // PAGES
 // =========================================
 
-const home = document.getElementById("home");
-const letter = document.getElementById("letter");
-const gallery = document.getElementById("gallery");
-const ending = document.getElementById("ending");
+const letter=document.getElementById("letter");
+const gallery=document.getElementById("gallery");
+const ending=document.getElementById("ending");
+
+function showPage(page){
+
+    document.querySelectorAll(".page").forEach(p=>{
+
+        p.classList.remove("active");
+
+    });
+
+    page.classList.add("active");
+
+}
 
 // =========================================
-// PAGE TRANSITION
+// ENVELOPE
 // =========================================
 
-function showPage(nextPage){
+const envelope=document.getElementById("envelope");
 
-    const currentPage = document.querySelector(".page.active");
+envelope.addEventListener("click",()=>{
 
-    if(currentPage === nextPage) return;
-
-    currentPage.style.opacity = "0";
-    currentPage.style.transform = "translateY(25px)";
+    envelope.classList.add("open");
 
     setTimeout(()=>{
 
-        currentPage.classList.remove("active");
+        showPage(letter);
 
-        currentPage.style.opacity = "";
-        currentPage.style.transform = "";
+    },1300);
 
-        nextPage.classList.add("active");
-
-        nextPage.style.opacity = "0";
-        nextPage.style.transform = "translateY(25px)";
-
-        requestAnimationFrame(()=>{
-
-            nextPage.style.transition = "all .55s ease";
-
-            nextPage.style.opacity = "1";
-            nextPage.style.transform = "translateY(0)";
-
-        });
-
-    },250);
-
-}
+});
 
 // =========================================
 // BUTTONS
 // =========================================
 
-document.getElementById("openLetter").addEventListener("click",()=>{
-
-    showPage(letter);
-
-});
-
-document.getElementById("nextGallery").addEventListener("click",()=>{
+document.getElementById("nextGallery").onclick=()=>{
 
     showPage(gallery);
 
-});
+}
 
-document.getElementById("nextEnding").addEventListener("click",()=>{
+document.getElementById("nextEnding").onclick=()=>{
 
     showPage(ending);
 
-});
-
-// =========================================
-// BUTTON RIPPLE EFFECT
-// =========================================
-
-document.querySelectorAll("button").forEach(button=>{
-
-    button.addEventListener("click",()=>{
-
-        button.animate(
-
-            [
-
-                {transform:"scale(1)"},
-
-                {transform:"scale(.92)"},
-
-                {transform:"scale(1.05)"},
-
-                {transform:"scale(1)"}
-
-            ],
-
-            {
-
-                duration:350
-
-            }
-
-        );
-
-    });
-
-});
+}
