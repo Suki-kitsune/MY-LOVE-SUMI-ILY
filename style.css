@@ -1,167 +1,204 @@
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body{
-
-font-family:'Cormorant Garamond',serif;
-background:linear-gradient(135deg,#ffeef6,#fff8fc);
-
-overflow:hidden;
-height:100vh;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-position:relative;
-
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:'Cormorant Garamond',serif;
+    background:linear-gradient(180deg,#ffeef5,#fff8fc);
 }
 
-.screen{
-
-position:absolute;
-
-width:100%;
-height:100%;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-transition:.5s;
-
+.page{
+    position:absolute;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding:25px;
+    transition:.5s;
 }
 
-.hidden{
-
-display:none;
-
+.page.active{
+    display:flex;
 }
 
-.card,.letter{
-
-width:90%;
-max-width:420px;
-
-background:rgba(255,255,255,.45);
-
-backdrop-filter:blur(15px);
-
-padding:35px;
-
-border-radius:30px;
-
-box-shadow:0 20px 40px rgba(0,0,0,.08);
-
-text-align:center;
-
+.glass{
+    width:90%;
+    max-width:420px;
+    padding:40px 25px;
+    border-radius:30px;
+    background:rgba(255,255,255,.45);
+    backdrop-filter:blur(16px);
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+    text-align:center;
 }
 
-.topTitle{
-
-font-size:34px;
-
-font-style:italic;
-
-color:#af86ca;
-
+.glass h2{
+    color:#b585c9;
+    font-size:2rem;
+    font-style:italic;
 }
 
-h1{
-
-font-family:'Press Start 2P',cursive;
-
-font-size:32px;
-
-margin:25px 0;
-
-line-height:48px;
-
-color:#ea4f81;
-
+.glass h1{
+    margin:25px 0;
+    font-family:'Press Start 2P',cursive;
+    font-size:1.6rem;
+    line-height:2.4rem;
+    color:#ec5d8d;
 }
 
-.subtitle{
-
-font-size:24px;
-
-color:#777;
-
+.glass p{
+    font-size:1.3rem;
+    color:#666;
 }
 
 button{
-
-margin-top:35px;
-
-padding:18px 45px;
-
-border:none;
-
-border-radius:50px;
-
-background:#ef5f89;
-
-color:white;
-
-font-family:'Press Start 2P';
-
-font-size:12px;
-
-cursor:pointer;
-
+    margin-top:35px;
+    border:none;
+    padding:18px 35px;
+    border-radius:50px;
+    background:#ef5f8d;
+    color:white;
+    font-family:'Press Start 2P',cursive;
+    font-size:.75rem;
+    cursor:pointer;
+    transition:.25s;
+    box-shadow:0 10px 25px rgba(239,95,141,.35);
 }
 
 button:hover{
+    transform:scale(1.05);
+}
 
-transform:scale(1.05);
+.paper{
+    width:92%;
+    max-width:500px;
+    background:#fffdfb;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.paper h2{
+    text-align:center;
+    color:#eb5f8c;
+    margin-bottom:25px;
+}
+
+.paper p{
+    margin:18px 0;
+    line-height:1.9;
+    font-size:1.3rem;
+}
+
+.paper h3{
+    text-align:right;
+    margin-top:40px;
+    color:#d64b78;
+}
+
+.galleryTitle{
+    margin-bottom:25px;
+    color:#e65d89;
+    font-family:'Press Start 2P';
+    font-size:1rem;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    width:100%;
+    max-width:420px;
+}
+
+.gallery img{
+    width:100%;
+    aspect-ratio:1;
+    object-fit:cover;
+    border-radius:18px;
+    background:#ffdce7;
+}
+
+.names{
+    text-align:center;
+    font-family:'Press Start 2P';
+    color:#ea5d8a;
+    line-height:2.5rem;
+    margin-top:30px;
+}
+
+.heart{
+    font-size:2.4rem;
+    color:#ff4f89;
+    animation:beat 1.4s infinite;
+    filter:drop-shadow(0 0 15px #ff76a7);
+}
+
+@keyframes beat{
+
+0%,100%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.25);
+}
 
 }
 
-.signature{
-
-margin-top:40px;
-
-font-size:28px;
-
-font-style:italic;
-
-color:#d84b79;
-
+#petals{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
 }
 
 .petal{
-
-position:absolute;
-
-top:-60px;
-
-animation:fall linear infinite;
-
-pointer-events:none;
-
+    position:absolute;
+    top:-50px;
+    animation:fall linear infinite;
 }
 
 @keyframes fall{
 
 0%{
-
-transform:translateY(-100px);
-
-}
-
-50%{
-
-transform:translateY(50vh) translateX(25px);
-
+transform:translateY(-50px) translateX(0) rotate(0deg);
 }
 
 100%{
+transform:translateY(120vh) translateX(60px) rotate(360deg);
+}
 
-transform:translateY(120vh) translateX(-25px);
+}
 
+@media(max-width:500px){
+
+.glass h2{
+font-size:1.6rem;
+}
+
+.glass h1{
+font-size:1.2rem;
+line-height:2rem;
+}
+
+.glass p{
+font-size:1.1rem;
+}
+
+.paper p{
+font-size:1.1rem;
+}
+
+button{
+font-size:.65rem;
+padding:16px 28px;
 }
 
 }
