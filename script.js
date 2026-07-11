@@ -181,6 +181,8 @@ if(loveHeart){
 
         if(taps===5){
 
+            explodeHearts(loveHeart);
+
             taps=0;
 
             popupText.innerHTML = messages[Math.min(stage, messages.length-1)];
