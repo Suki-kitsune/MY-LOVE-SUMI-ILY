@@ -173,56 +173,159 @@ button:hover{
 
 #ending{
     justify-content:center;
+    align-items:center;
+    padding:30px 20px;
 }
 
-#foxScene{
+.endingCard{
+
     width:100%;
-    max-width:500px;
-    height:220px;
-    margin:20px 0;
+    max-width:420px;
+
+    background:rgba(255,255,255,.55);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:28px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.08);
+
+}
+
+.endingTitle{
+
+    color:#ea5d89;
+
+    font-family:'Press Start 2P',cursive;
+
+    font-size:1rem;
+
+    line-height:2rem;
+
+    margin-bottom:25px;
+
+}
+
+.foxes{
+
+    font-size:58px;
+
+    margin-bottom:25px;
+
+    animation:floatFox 3s ease-in-out infinite;
+
 }
 
 .names{
-    text-align:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
     font-family:'Press Start 2P',cursive;
+
     color:#ea5d89;
-    line-height:2.4rem;
+
+    font-size:.75rem;
+
+    margin-bottom:30px;
+
 }
 
 .heart{
-    font-size:2.4rem;
-    color:#ff5f92;
-    filter:drop-shadow(0 0 15px #ff82af);
+
+    font-size:30px;
+
     animation:heartbeat 1.5s infinite;
+
 }
 
-@keyframes heartbeat{
+.loveCounter{
+
+    background:#fff8fb;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    margin-bottom:30px;
+
+}
+
+.sinceText{
+
+    color:#888;
+
+    font-size:1rem;
+
+}
+
+.loveCounter h3{
+
+    margin-top:10px;
+
+    color:#ef5d8d;
+
+    font-size:1.5rem;
+
+}
+
+#daysTogether{
+
+    margin-top:18px;
+
+    font-size:1.25rem;
+
+    color:#d84d7a;
+
+    font-weight:bold;
+
+}
+
+.finalQuote{
+
+    color:#555;
+
+    font-size:1.25rem;
+
+    line-height:1.9;
+
+    margin-bottom:30px;
+
+    font-style:italic;
+
+}
+
+.madeLove{
+
+    color:#c77b99;
+
+    opacity:.85;
+
+}
+
+@keyframes floatFox{
 
 0%,100%{
-transform:scale(1);
+
+transform:translateY(0);
+
 }
 
 50%{
-transform:scale(1.25);
-}
+
+transform:translateY(-8px);
 
 }
 
-/* =========================
-   FOOTER
-========================= */
-
-.footer{
-    width:100%;
-    margin-top:35px;
-    background:#ef5d8d;
-    color:white;
-    text-align:center;
-    padding:14px 18px;
-    font-size:15px;
-    font-family:'Cormorant Garamond',serif;
-    border-radius:25px 25px 0 0;
-    box-shadow:0 -8px 20px rgba(239,93,141,.25);
 }
 
 /* =========================
