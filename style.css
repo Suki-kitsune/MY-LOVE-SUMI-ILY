@@ -930,3 +930,136 @@ opacity:1;
 }
 
 }
+
+
+/* =========================
+   FLOATING MENU
+========================= */
+
+#menuButton{
+
+    position:fixed;
+
+    bottom:20px;
+
+    right:20px;
+
+    width:58px;
+
+    height:58px;
+
+    background:#ef5d8d;
+
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    box-shadow:0 10px 25px rgba(239,93,141,.35);
+
+    z-index:9000;
+
+    transition:.3s;
+
+}
+
+#menuButton:hover{
+
+    transform:scale(1.08);
+
+}
+
+#menuPanel{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:90px;
+
+    width:210px;
+
+    background:rgba(255,255,255,.92);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:22px;
+
+    padding:12px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(15px);
+
+    transition:.3s;
+
+    z-index:8999;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+}
+
+#menuPanel.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+.menuItem{
+
+    margin:0;
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#fff5f8;
+
+    color:#ea5d89;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:1.15rem;
+
+    text-align:left;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    box-shadow:none;
+
+}
+
+.menuItem:hover{
+
+    background:#ffdce8;
+
+    transform:translateX(5px);
+
+}
