@@ -245,3 +245,30 @@ function explodeHearts(element){
     }
 
 }
+
+
+// =========================================
+// PHOTO VIEWER
+// =========================================
+
+const galleryImages = document.querySelectorAll(".gallery img");
+const photoViewer = document.getElementById("photoViewer");
+const viewerImage = document.getElementById("viewerImage");
+
+galleryImages.forEach(img => {
+
+    img.addEventListener("click", () => {
+
+        viewerImage.src = img.src;
+
+        photoViewer.classList.add("show");
+
+    });
+
+});
+
+photoViewer.addEventListener("click", () => {
+
+    photoViewer.classList.remove("show");
+
+});
