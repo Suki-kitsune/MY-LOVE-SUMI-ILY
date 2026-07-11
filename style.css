@@ -709,3 +709,98 @@ transform:translateY(-7px);
 }
 
 }
+
+
+/* =========================
+   SECRET POPUP
+========================= */
+
+#secretPopup{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.4s;
+
+    z-index:5000;
+
+    backdrop-filter:blur(6px);
+
+}
+
+#secretPopup.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.popupCard{
+
+    width:85%;
+
+    max-width:320px;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    animation:popup .4s ease;
+
+}
+
+.popupCard h2{
+
+    font-size:40px;
+
+    margin-bottom:15px;
+
+}
+
+.popupCard p{
+
+    color:#555;
+
+    line-height:1.8;
+
+    font-size:1.2rem;
+
+}
+
+@keyframes popup{
+
+from{
+
+transform:scale(.7);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
