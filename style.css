@@ -804,3 +804,52 @@ opacity:1;
 }
 
 }
+
+
+/* =========================
+   HEART PARTICLES
+========================= */
+
+#heartParticles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:6000;
+
+}
+
+.flyingHeart{
+
+    position:absolute;
+
+    font-size:22px;
+
+    animation:heartFly 1.3s ease-out forwards;
+
+}
+
+@keyframes heartFly{
+
+0%{
+
+transform:translate(0,0) scale(.5);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translate(var(--x),var(--y)) scale(1.6);
+
+opacity:0;
+
+}
+
+}
