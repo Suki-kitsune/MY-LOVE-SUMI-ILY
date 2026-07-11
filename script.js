@@ -1,27 +1,27 @@
-const body=document.body;
+const body = document.body;
 
-for(let i=0;i<35;i++){
+for (let i = 0; i < 40; i++) {
 
-let heart=document.createElement("div");
+    const petal = document.createElement("div");
 
-heart.innerHTML="♡";
+    petal.className = "petal";
 
-heart.className="heart";
+    petal.innerHTML = "🌸";
 
-heart.style.left=Math.random()*100+"vw";
+    petal.style.left = Math.random() * 100 + "vw";
 
-heart.style.fontSize=(20+Math.random()*25)+"px";
+    petal.style.fontSize = (18 + Math.random() * 18) + "px";
 
-heart.style.animationDuration=(6+Math.random()*6)+"s";
+    petal.style.animationDuration = (8 + Math.random() * 6) + "s";
 
-heart.style.animationDelay=Math.random()*5+"s";
+    petal.style.animationDelay = Math.random() * 5 + "s";
 
-body.appendChild(heart);
+    body.appendChild(petal);
 
 }
 
-document.getElementById("openBtn").onclick=function(){
+document.getElementById("openBtn").onclick = function () {
 
-alert("The love letter page is coming next ❤️");
+    alert("The love letter page is coming next ❤️");
 
 };
