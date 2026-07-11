@@ -77,3 +77,37 @@ document.getElementById("nextEnding").onclick=()=>{
     showPage(ending);
 
 }
+
+// =========================================
+// DAYS TOGETHER COUNTER
+// =========================================
+
+const startDate = new Date("2026-06-21");
+
+const today = new Date();
+
+const diff = today - startDate;
+
+const days = Math.max(0, Math.floor(diff / (1000 * 60 * 60 * 24)));
+
+const counter = document.getElementById("daysTogether");
+
+if(counter){
+
+    let current = 0;
+
+    const animation = setInterval(()=>{
+
+        current++;
+
+        counter.innerHTML = `🌸 ${current} Days Together 🌸`;
+
+        if(current >= days){
+
+            clearInterval(animation);
+
+        }
+
+    },40);
+
+}
