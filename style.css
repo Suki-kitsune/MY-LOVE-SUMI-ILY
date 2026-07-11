@@ -332,67 +332,118 @@ font-size:13px;
 padding:12px 14px;
 }
 
-   /* =========================
-   ENVELOPE
-========================= */
+  /* ==========================================
+   HOME CARD V2
+========================================== */
+
+.homeCard{
+    position:relative;
+    overflow:hidden;
+}
+
+.flowerTop{
+    font-size:42px;
+    margin-bottom:15px;
+    animation:floatFlower 3s ease-in-out infinite;
+}
+
+.welcomeTitle{
+    font-size:2rem;
+    color:#c27ac0;
+    margin-bottom:15px;
+}
+
+.mainTitle{
+    margin-top:5px;
+    color:#ef5d8d;
+}
+
+.subtitle{
+    margin-top:20px;
+    margin-bottom:35px;
+    color:#666;
+    line-height:1.8;
+}
+
+.madeBy{
+    margin-top:35px;
+    color:#d884a5;
+    font-size:.95rem;
+    opacity:.8;
+}
+
+/* ==========================================
+   ENVELOPE V2
+========================================== */
 
 .envelopeContainer{
-    margin-top:40px;
     display:flex;
     flex-direction:column;
     align-items:center;
+    margin-top:20px;
 }
 
 #envelope{
 
+    position:relative;
+
     width:180px;
     height:120px;
 
-    position:relative;
-
     cursor:pointer;
 
-    transition:.5s;
+    transition:.35s;
+
+    animation:floatEnvelope 3s ease-in-out infinite;
 
 }
 
 #envelope:hover{
 
-    transform:translateY(-6px);
-
-}
-
-#envelope.open{
-
     transform:scale(1.05);
 
 }
 
-#envelope::before{
+.envelopeBack{
 
-    content:"";
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:#f8aac5;
+
+    border-radius:12px;
+
+}
+
+.envelopeFront{
 
     position:absolute;
 
     bottom:0;
 
     width:100%;
-    height:100%;
+    height:65%;
 
-    background:#f59cbc;
+    background:#ef6d98;
 
-    border-radius:0 0 15px 15px;
+    clip-path:polygon(0 0,50% 45%,100% 0,100% 100%,0 100%);
+
+    border-radius:0 0 12px 12px;
+
+    z-index:3;
 
 }
 
-.flap{
+.envelopeFlap{
 
     position:absolute;
 
     width:100%;
-    height:65px;
+    height:70px;
 
-    background:#ef5d8d;
+    background:#f37ca6;
 
     clip-path:polygon(0 0,100% 0,50% 100%);
 
@@ -404,22 +455,18 @@ padding:12px 14px;
 
 }
 
-#envelope.open .flap{
-
-    transform:rotateX(180deg);
-
-}
-
-.letterInside{
+.envelopeLetter{
 
     position:absolute;
 
     left:50%;
-    top:20px;
+
+    top:18px;
 
     transform:translateX(-50%);
 
-    width:150px;
+    width:145px;
+
     height:90px;
 
     background:white;
@@ -427,34 +474,120 @@ padding:12px 14px;
     border-radius:10px;
 
     display:flex;
-    justify-content:center;
+
     align-items:center;
+
+    justify-content:center;
 
     font-size:38px;
 
+    box-shadow:0 10px 20px rgba(0,0,0,.12);
+
     transition:.8s;
 
-    box-shadow:0 8px 18px rgba(0,0,0,.15);
+    z-index:2;
 
 }
 
-#envelope.open .letterInside{
+.heartSeal{
 
-    transform:translate(-50%,-55px);
+    position:absolute;
+
+    left:50%;
+
+    top:38px;
+
+    transform:translateX(-50%);
+
+    width:34px;
+
+    height:34px;
+
+    border-radius:50%;
+
+    background:#ff4f84;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:18px;
+
+    z-index:8;
+
+    transition:.5s;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
 
 }
 
 .tapText{
 
-    margin-top:20px;
-
-    color:#ea5d89;
+    margin-top:22px;
 
     font-family:'Press Start 2P',cursive;
 
+    color:#ef5d8d;
+
     font-size:.6rem;
 
-    animation:bounce 1.5s infinite;
+    animation:bounce 1.6s infinite;
+
+}
+
+#envelope.open .heartSeal{
+
+    opacity:0;
+
+    transform:translateX(-50%) scale(0);
+
+}
+
+#envelope.open .envelopeFlap{
+
+    transform:rotateX(180deg);
+
+}
+
+#envelope.open .envelopeLetter{
+
+    transform:translate(-50%,-55px);
+
+}
+
+@keyframes floatEnvelope{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+}
+
+@keyframes floatFlower{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-5px);
+
+}
 
 }
 
@@ -468,9 +601,7 @@ transform:translateY(0);
 
 50%{
 
-transform:translateY(-8px);
-
-}
+transform:translateY(-7px);
 
 }
 
