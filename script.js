@@ -111,3 +111,56 @@ if(counter){
     },40);
 
 }
+
+// =========================================
+// HEART SECRET
+// =========================================
+
+const loveHeart = document.getElementById("loveHeart");
+const secretPopup = document.getElementById("secretPopup");
+
+let taps = 0;
+
+if(loveHeart){
+
+    loveHeart.addEventListener("click",()=>{
+
+        taps++;
+
+        loveHeart.animate(
+
+            [
+
+                {transform:"scale(1)"},
+
+                {transform:"scale(1.5)"},
+
+                {transform:"scale(1)"}
+
+            ],
+
+            {
+
+                duration:250
+
+            }
+
+        );
+
+        if(taps===5){
+
+            taps=0;
+
+            secretPopup.classList.add("show");
+
+            setTimeout(()=>{
+
+                secretPopup.classList.remove("show");
+
+            },4000);
+
+        }
+
+    });
+
+}
