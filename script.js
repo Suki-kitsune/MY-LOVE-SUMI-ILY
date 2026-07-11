@@ -278,3 +278,46 @@ photoViewer.addEventListener("click", () => {
 });
 
 alert("Script loaded!");
+
+
+// =========================================
+// HAMBURGER MENU
+// =========================================
+
+const menuButton = document.getElementById("menuButton");
+const menuPanel = document.getElementById("menuPanel");
+const menuItems = document.querySelectorAll(".menuItem");
+
+
+if(menuButton && menuPanel){
+
+    menuButton.addEventListener("click",()=>{
+
+        menuPanel.classList.toggle("show");
+
+    });
+
+}
+
+
+// MENU PAGE SWITCHING
+
+menuItems.forEach(item=>{
+
+    item.addEventListener("click",()=>{
+
+        const pageName = item.dataset.page;
+
+        const targetPage = document.getElementById(pageName);
+
+        if(targetPage){
+
+            showPage(targetPage);
+
+        }
+
+        menuPanel.classList.remove("show");
+
+    });
+
+});
