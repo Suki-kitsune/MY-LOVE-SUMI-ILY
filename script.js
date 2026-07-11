@@ -204,3 +204,42 @@ if(loveHeart){
     });
 
 }
+
+
+// =========================================
+// HEART EXPLOSION
+// =========================================
+
+const heartLayer = document.getElementById("heartParticles");
+
+function explodeHearts(element){
+
+    const rect = element.getBoundingClientRect();
+
+    const centerX = rect.left + rect.width/2;
+
+    const centerY = rect.top + rect.height/2;
+
+    for(let i=0;i<18;i++){
+
+        const heart=document.createElement("div");
+
+        heart.className="flyingHeart";
+
+        heart.innerHTML="💖";
+
+        heart.style.left=centerX+"px";
+
+        heart.style.top=centerY+"px";
+
+        heart.style.setProperty("--x",(Math.random()*240-120)+"px");
+
+        heart.style.setProperty("--y",(Math.random()*-220)+"px");
+
+        heartLayer.appendChild(heart);
+
+        setTimeout(()=>heart.remove(),1300);
+
+    }
+
+}
