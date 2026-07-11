@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,40 +9,29 @@
 <link rel="stylesheet" href="style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
 
 </head>
-
 <body>
 
-<!-- Cherry Blossom Container -->
 <div id="petals"></div>
 
-<!-- ================= WELCOME ================= -->
+<!-- ================= HOME ================= -->
 
-<section id="welcome" class="screen">
+<section id="home" class="page active">
 
-<div class="card">
+<div class="glass">
 
-<p class="topTitle">
-A Letter for You
-</p>
+<h2>A Letter for You</h2>
 
-<h1>
-For Sumi <span>♡</span>
-</h1>
+<h1>For Sumi ♡</h1>
 
-<p class="subtitle">
-
+<p>
 Every love story starts with a single page...
-
 </p>
 
-<button id="openBtn">
-
+<button id="openLetter">
 Open Letter
-
 </button>
 
 </div>
@@ -53,55 +40,109 @@ Open Letter
 
 <!-- ================= LETTER ================= -->
 
-<section id="letter" class="screen hidden">
+<section id="letter" class="page">
 
-<div class="letter">
+<div class="paper">
 
-<h2>
-
-Dear Sumi ❤️
-
-</h2>
+<h2>Dear Sumi ❤️</h2>
 
 <p>
 
-This is where your love letter will go.
+This is where I'll write the real love letter later.
 
-Right now this is only a placeholder.
-
-Later we're going to write the most beautiful letter here.
-
-Every paragraph will fade in as she scrolls.
-
-It'll feel like reading a real handwritten love letter.
+For now this is just a placeholder.
 
 </p>
 
 <p>
 
-Thank you for always making me smile.
+Thank you for making my life brighter.
 
-Thank you for being yourself.
-
-Thank you for being my favorite person.
+Thank you for being you.
 
 </p>
 
-<p class="signature">
+<p>
+
+I hope every time you smile...
+
+you remember that someone loves you endlessly.
+
+</p>
+
+<h3>
 
 Forever Yours,
 
-<br><br>
+<br>
 
 Tappu ❤️
 
-</p>
+</h3>
 
-<button id="galleryBtn">
+<button id="nextGallery">
 
-Our Memories →
+Next →
 
 </button>
+
+</div>
+
+</section>
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery" class="page">
+
+<h2 class="galleryTitle">
+
+Our Memories
+
+</h2>
+
+<div class="gallery">
+
+<img src="photo1.jpg">
+
+<img src="photo2.jpg">
+
+<img src="photo3.jpg">
+
+<img src="photo4.jpg">
+
+</div>
+
+<button id="nextEnding">
+
+Next →
+
+</button>
+
+</section>
+
+<!-- ================= END ================= -->
+
+<section id="ending" class="page">
+
+<h2>
+
+I Love You ♡
+
+</h2>
+
+<div id="foxScene">
+
+<!-- Foxes go here later -->
+
+</div>
+
+<div class="names">
+
+<div>Tappu</div>
+
+<div class="heart">❤</div>
+
+<div>Sumi</div>
 
 </div>
 
@@ -110,5 +151,4 @@ Our Memories →
 <script src="script.js"></script>
 
 </body>
-
 </html>
