@@ -1,5 +1,8 @@
-// Create falling cherry blossom petals
-const petalsContainer = document.getElementById("petals");
+// --------------------
+// Falling Cherry Blossoms
+// --------------------
+
+const petals = document.getElementById("petals");
 
 for (let i = 0; i < 35; i++) {
 
@@ -17,24 +20,47 @@ for (let i = 0; i < 35; i++) {
 
     petal.style.animationDelay = Math.random() * 5 + "s";
 
-    petalsContainer.appendChild(petal);
+    petals.appendChild(petal);
+
 }
 
-// Welcome -> Letter
-const openBtn = document.getElementById("openBtn");
+// --------------------
+// Pages
+// --------------------
 
-if (openBtn) {
+const home = document.getElementById("home");
+const letter = document.getElementById("letter");
+const gallery = document.getElementById("gallery");
+const ending = document.getElementById("ending");
 
-    openBtn.addEventListener("click", () => {
+function showPage(page){
 
-        document.getElementById("welcome").classList.add("hidden");
-
-        setTimeout(() => {
-
-            document.getElementById("letter").classList.remove("hidden");
-
-        }, 500);
-
+    document.querySelectorAll(".page").forEach(p=>{
+        p.classList.remove("active");
     });
+
+    page.classList.add("active");
+
+}
+
+// --------------------
+// Buttons
+// --------------------
+
+document.getElementById("openLetter").onclick = () => {
+
+    showPage(letter);
+
+}
+
+document.getElementById("nextGallery").onclick = () => {
+
+    showPage(gallery);
+
+}
+
+document.getElementById("nextEnding").onclick = () => {
+
+    showPage(ending);
 
 }
