@@ -113,13 +113,45 @@ if(counter){
 }
 
 // =========================================
-// HEART SECRET
+// HEART SECRET V2
 // =========================================
 
 const loveHeart = document.getElementById("loveHeart");
 const secretPopup = document.getElementById("secretPopup");
+const popupText = document.querySelector(".popupCard p");
 
 let taps = 0;
+let stage = 0;
+
+const messages = [
+
+`I'd choose you in every lifetime. ❤️`,
+
+`You found it again... 🌸
+
+I still love you just as much.`,
+
+`😂 You're really trying to find every secret, aren't you?
+
+Good... because I hid them just for you. ❤️`,
+
+`Almost there...
+
+One last secret remains. ✨`,
+
+`🎉 Congratulations!
+
+You found every hidden message.
+
+No matter how many secrets this website has...
+
+You'll always be my favorite one.
+
+I love you.
+
+— Tappu ❤️`
+
+];
 
 if(loveHeart){
 
@@ -133,7 +165,7 @@ if(loveHeart){
 
                 {transform:"scale(1)"},
 
-                {transform:"scale(1.5)"},
+                {transform:"scale(1.35)"},
 
                 {transform:"scale(1)"}
 
@@ -141,7 +173,7 @@ if(loveHeart){
 
             {
 
-                duration:250
+                duration:220
 
             }
 
@@ -151,13 +183,21 @@ if(loveHeart){
 
             taps=0;
 
+            popupText.innerHTML = messages[Math.min(stage, messages.length-1)];
+
             secretPopup.classList.add("show");
 
             setTimeout(()=>{
 
                 secretPopup.classList.remove("show");
 
-            },4000);
+            },4500);
+
+            if(stage < messages.length-1){
+
+                stage++;
+
+            }
 
         }
 
