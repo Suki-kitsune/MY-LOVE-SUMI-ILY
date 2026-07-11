@@ -1,6 +1,6 @@
-// --------------------
-// Falling Cherry Blossoms
-// --------------------
+// =========================================
+// CHERRY BLOSSOMS
+// =========================================
 
 const petals = document.getElementById("petals");
 
@@ -24,43 +24,105 @@ for (let i = 0; i < 35; i++) {
 
 }
 
-// --------------------
-// Pages
-// --------------------
+// =========================================
+// PAGES
+// =========================================
 
 const home = document.getElementById("home");
 const letter = document.getElementById("letter");
 const gallery = document.getElementById("gallery");
 const ending = document.getElementById("ending");
 
-function showPage(page){
+// =========================================
+// PAGE TRANSITION
+// =========================================
 
-    document.querySelectorAll(".page").forEach(p=>{
-        p.classList.remove("active");
-    });
+function showPage(nextPage){
 
-    page.classList.add("active");
+    const currentPage = document.querySelector(".page.active");
+
+    if(currentPage === nextPage) return;
+
+    currentPage.style.opacity = "0";
+    currentPage.style.transform = "translateY(25px)";
+
+    setTimeout(()=>{
+
+        currentPage.classList.remove("active");
+
+        currentPage.style.opacity = "";
+        currentPage.style.transform = "";
+
+        nextPage.classList.add("active");
+
+        nextPage.style.opacity = "0";
+        nextPage.style.transform = "translateY(25px)";
+
+        requestAnimationFrame(()=>{
+
+            nextPage.style.transition = "all .55s ease";
+
+            nextPage.style.opacity = "1";
+            nextPage.style.transform = "translateY(0)";
+
+        });
+
+    },250);
 
 }
 
-// --------------------
-// Buttons
-// --------------------
+// =========================================
+// BUTTONS
+// =========================================
 
-document.getElementById("openLetter").onclick = () => {
+document.getElementById("openLetter").addEventListener("click",()=>{
 
     showPage(letter);
 
-}
+});
 
-document.getElementById("nextGallery").onclick = () => {
+document.getElementById("nextGallery").addEventListener("click",()=>{
 
     showPage(gallery);
 
-}
+});
 
-document.getElementById("nextEnding").onclick = () => {
+document.getElementById("nextEnding").addEventListener("click",()=>{
 
     showPage(ending);
 
-}
+});
+
+// =========================================
+// BUTTON RIPPLE EFFECT
+// =========================================
+
+document.querySelectorAll("button").forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        button.animate(
+
+            [
+
+                {transform:"scale(1)"},
+
+                {transform:"scale(.92)"},
+
+                {transform:"scale(1.05)"},
+
+                {transform:"scale(1)"}
+
+            ],
+
+            {
+
+                duration:350
+
+            }
+
+        );
+
+    });
+
+});
