@@ -276,3 +276,5 @@ photoViewer.addEventListener("click", () => {
     photoViewer.classList.remove("show");
 
 });
+
+alert("Script loaded!");
