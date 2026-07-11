@@ -277,8 +277,6 @@ photoViewer.addEventListener("click", () => {
 
 });
 
-alert("Script loaded!");
-
 
 // =========================================
 // HAMBURGER MENU
