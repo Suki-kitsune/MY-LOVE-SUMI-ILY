@@ -1,204 +1,491 @@
+/* =========================
+   RESET
+========================= */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-html,body{
+html,
+body{
+
     width:100%;
     height:100%;
+
     overflow:hidden;
+
     font-family:'Cormorant Garamond',serif;
+
     background:linear-gradient(180deg,#ffeef5,#fff8fc);
+
 }
 
+/* =========================
+   PAGES
+========================= */
+
 .page{
+
     position:absolute;
+
     inset:0;
+
     display:none;
-    justify-content:center;
-    align-items:center;
+
     flex-direction:column;
-    padding:25px;
-    transition:.5s;
+
+    align-items:center;
+
+    overflow-y:auto;
+
+    padding:35px 20px 80px;
+
+    transition:.45s ease;
+
 }
 
 .page.active{
+
     display:flex;
+
 }
 
+/* =========================
+   WELCOME CARD
+========================= */
+
 .glass{
-    width:90%;
-    max-width:420px;
-    padding:40px 25px;
-    border-radius:30px;
+
+    width:100%;
+
+    max-width:430px;
+
+    margin:auto;
+
     background:rgba(255,255,255,.45);
+
     backdrop-filter:blur(16px);
-    box-shadow:0 20px 40px rgba(0,0,0,.08);
+
+    border-radius:30px;
+
+    padding:40px 28px;
+
     text-align:center;
+
+    box-shadow:0 18px 40px rgba(0,0,0,.08);
+
 }
 
 .glass h2{
-    color:#b585c9;
+
+    color:#b67fcf;
+
     font-size:2rem;
+
     font-style:italic;
+
+    margin-bottom:20px;
+
 }
 
 .glass h1{
-    margin:25px 0;
+
     font-family:'Press Start 2P',cursive;
-    font-size:1.6rem;
+
+    color:#ea5c8c;
+
+    font-size:1.5rem;
+
     line-height:2.4rem;
-    color:#ec5d8d;
+
+    margin-bottom:25px;
+
 }
 
 .glass p{
-    font-size:1.3rem;
-    color:#666;
+
+    font-size:1.25rem;
+
+    color:#6d6d6d;
+
+    line-height:1.7;
+
 }
 
+/* =========================
+   BUTTON
+========================= */
+
 button{
+
     margin-top:35px;
+
+    padding:18px 34px;
+
     border:none;
-    padding:18px 35px;
+
     border-radius:50px;
-    background:#ef5f8d;
+
+    background:#ef5d8d;
+
     color:white;
+
     font-family:'Press Start 2P',cursive;
-    font-size:.75rem;
+
+    font-size:.72rem;
+
     cursor:pointer;
+
     transition:.25s;
-    box-shadow:0 10px 25px rgba(239,95,141,.35);
+
+    box-shadow:0 12px 25px rgba(239,93,141,.35);
+
 }
 
 button:hover{
+
     transform:scale(1.05);
+
 }
 
+/* =========================
+   LETTER
+========================= */
+
 .paper{
-    width:92%;
-    max-width:500px;
+
+    width:100%;
+
+    max-width:520px;
+
+    margin:20px auto;
+
     background:#fffdfb;
-    padding:35px;
+
     border-radius:25px;
+
+    padding:35px;
+
     box-shadow:0 15px 35px rgba(0,0,0,.08);
+
 }
 
 .paper h2{
+
     text-align:center;
-    color:#eb5f8c;
-    margin-bottom:25px;
+
+    color:#ea5d89;
+
+    margin-bottom:30px;
+
 }
 
 .paper p{
-    margin:18px 0;
-    line-height:1.9;
-    font-size:1.3rem;
+
+    font-size:1.25rem;
+
+    line-height:2;
+
+    color:#444;
+
+    margin-bottom:18px;
+
 }
 
 .paper h3{
-    text-align:right;
+
     margin-top:40px;
-    color:#d64b78;
+
+    color:#d84d7a;
+
+    text-align:right;
+
+    font-size:1.5rem;
+
 }
+/* =========================
+   GALLERY
+========================= */
 
 .galleryTitle{
+
+    margin-top:20px;
+
     margin-bottom:25px;
-    color:#e65d89;
-    font-family:'Press Start 2P';
+
+    color:#ea5d89;
+
+    font-family:'Press Start 2P',cursive;
+
     font-size:1rem;
+
+    text-align:center;
+
 }
 
 .gallery{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
+
     width:100%;
-    max-width:420px;
+
+    max-width:500px;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-bottom:30px;
+
 }
 
 .gallery img{
+
     width:100%;
+
     aspect-ratio:1;
+
     object-fit:cover;
+
     border-radius:18px;
-    background:#ffdce7;
+
+    background:#ffd9e5;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.gallery img:hover{
+
+    transform:scale(1.04);
+
+}
+
+/* =========================
+   ENDING
+========================= */
+
+#ending{
+
+    justify-content:center;
+
+}
+
+#foxScene{
+
+    width:100%;
+
+    max-width:500px;
+
+    height:220px;
+
+    margin:20px 0;
+
 }
 
 .names{
+
     text-align:center;
-    font-family:'Press Start 2P';
-    color:#ea5d8a;
-    line-height:2.5rem;
-    margin-top:30px;
+
+    font-family:'Press Start 2P',cursive;
+
+    color:#ea5d89;
+
+    line-height:2.4rem;
+
 }
 
 .heart{
+
     font-size:2.4rem;
-    color:#ff4f89;
-    animation:beat 1.4s infinite;
-    filter:drop-shadow(0 0 15px #ff76a7);
+
+    color:#ff5f92;
+
+    filter:drop-shadow(0 0 15px #ff82af);
+
+    animation:heartbeat 1.5s infinite;
+
 }
 
-@keyframes beat{
+@keyframes heartbeat{
 
 0%,100%{
+
 transform:scale(1);
+
 }
 
 50%{
+
 transform:scale(1.25);
+
 }
 
 }
+
+/* =========================
+   CHERRY BLOSSOMS
+========================= */
 
 #petals{
+
     position:fixed;
+
     inset:0;
+
     overflow:hidden;
+
     pointer-events:none;
+
+    z-index:999;
+
 }
 
 .petal{
+
     position:absolute;
+
     top:-50px;
+
     animation:fall linear infinite;
+
 }
 
 @keyframes fall{
 
 0%{
-transform:translateY(-50px) translateX(0) rotate(0deg);
+
+transform:
+translateY(-80px)
+translateX(0px)
+rotate(0deg);
+
+opacity:1;
+
+}
+
+25%{
+
+transform:
+translateY(25vh)
+translateX(25px)
+rotate(90deg);
+
+}
+
+50%{
+
+transform:
+translateY(50vh)
+translateX(-20px)
+rotate(180deg);
+
+}
+
+75%{
+
+transform:
+translateY(75vh)
+translateX(20px)
+rotate(270deg);
+
 }
 
 100%{
-transform:translateY(120vh) translateX(60px) rotate(360deg);
-}
+
+transform:
+translateY(120vh)
+translateX(-25px)
+rotate(360deg);
+
+opacity:.8;
 
 }
 
-@media(max-width:500px){
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+.glass{
+
+padding:30px 22px;
+
+}
 
 .glass h2{
+
 font-size:1.6rem;
+
 }
 
 .glass h1{
-font-size:1.2rem;
+
+font-size:1.1rem;
+
 line-height:2rem;
+
 }
 
 .glass p{
-font-size:1.1rem;
+
+font-size:1.05rem;
+
+}
+
+.paper{
+
+padding:25px;
+
 }
 
 .paper p{
+
 font-size:1.1rem;
+
+line-height:1.8;
+
+}
+
+.paper h3{
+
+font-size:1.3rem;
+
 }
 
 button{
-font-size:.65rem;
+
+font-size:.6rem;
+
 padding:16px 28px;
+
+}
+
+.gallery{
+
+gap:12px;
+
+}
+
+.names{
+
+font-size:.8rem;
+
+line-height:2rem;
+
+}
+
+.heart{
+
+font-size:2rem;
+
 }
 
 }
