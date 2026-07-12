@@ -1,6 +1,9 @@
-// =========================================
-// CHERRY BLOSSOMS
-// =========================================
+const music = document.getElementById("bgMusic");
+music.volume = 0.35;
+
+// --------------------
+// Falling Cherry Blossoms
+// --------------------
 
 const petals = document.getElementById("petals");
 
