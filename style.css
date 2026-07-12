@@ -1,329 +1,201 @@
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-
-font-family:'Cormorant Garamond',serif;
-
-background:linear-gradient(135deg,#ffeef6,#fff7fb);
-
-overflow:hidden;
-
-height:100vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
+    font-family:'Cormorant Garamond',serif;
+    background:linear-gradient(135deg,#ffeef6,#fff6fb);
+    overflow-x:hidden;
+    overflow-y:auto;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:40px 15px;
 }
 
 .card{
-
-width:90%;
-
-max-width:420px;
-
-background:white;
-
-padding:45px 30px;
-
-border-radius:30px;
-
-box-shadow:0 20px 60px rgba(0,0,0,.08);
-
-text-align:center;
-
-position:relative;
-
-z-index:5;
-
+    width:100%;
+    max-width:430px;
+    background:#fff;
+    border-radius:30px;
+    padding:45px 25px;
+    box-shadow:0 20px 50px rgba(0,0,0,.08);
+    text-align:center;
+    position:relative;
 }
 
 .flower{
-
-font-size:45px;
-
-margin-bottom:10px;
-
-animation:float 3s infinite ease-in-out;
-
+    font-size:45px;
+    margin-bottom:15px;
 }
 
 h2{
-
-font-size:42px;
-
-color:#b98ad8;
-
-font-weight:600;
-
-font-style:italic;
-
-margin-bottom:25px;
-
+    color:#c090df;
+    font-size:58px;
+    font-style:italic;
+    margin-bottom:30px;
 }
 
 h1{
-
-font-family:'Press Start 2P',cursive;
-
-font-size:28px;
-
-color:#ef5d93;
-
-margin-bottom:35px;
-
-line-height:1.5;
-
+    font-family:'Press Start 2P',cursive;
+    color:#f05a93;
+    font-size:27px;
+    line-height:1.5;
+    margin-bottom:35px;
 }
 
 p{
-
-font-size:30px;
-
-color:#777;
-
-margin:22px 0;
-
+    color:#777;
+    font-size:28px;
+    line-height:1.5;
+    margin:20px 0;
 }
 
+/* ---------- Envelope ---------- */
+
 .envelope-container{
-
-margin:40px 0;
-
-display:flex;
-
-justify-content:center;
-
+    display:flex;
+    justify-content:center;
+    margin:45px 0;
 }
 
 .envelope{
-
-width:220px;
-
-height:140px;
-
-background:#f46fa2;
-
-position:relative;
-
-cursor:pointer;
-
-border-radius:0 0 15px 15px;
-
-transition:.8s;
-
-animation:float 4s ease-in-out infinite;
-
+    width:240px;
+    height:160px;
+    position:relative;
+    cursor:pointer;
+    animation:float 3s ease-in-out infinite;
 }
 
-.envelope:before{
-
-content:"";
-
-position:absolute;
-
-left:0;
-
-bottom:0;
-
-border-left:110px solid #ef8db5;
-
-border-top:70px solid transparent;
-
+.back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:#ec6ea2;
+    border-radius:0 0 12px 12px;
 }
 
-.envelope:after{
+.left{
+    position:absolute;
+    border-left:120px solid #f08ab5;
+    border-top:80px solid transparent;
+    border-bottom:80px solid transparent;
+}
 
-content:"";
+.right{
+    position:absolute;
+    right:0;
+    border-right:120px solid #e35d93;
+    border-top:80px solid transparent;
+    border-bottom:80px solid transparent;
+}
 
-position:absolute;
-
-right:0;
-
-bottom:0;
-
-border-right:110px solid #e9689d;
-
-border-top:70px solid transparent;
-
+.bottom{
+    position:absolute;
+    bottom:0;
+    border-left:120px solid transparent;
+    border-right:120px solid transparent;
+    border-bottom:80px solid #f7a1c3;
 }
 
 .flap{
-
-position:absolute;
-
-width:0;
-
-height:0;
-
-border-left:110px solid transparent;
-
-border-right:110px solid transparent;
-
-border-top:75px solid #ec6a9f;
-
-top:0;
-
-transform-origin:top;
-
-transition:1s;
-
-z-index:4;
-
+    position:absolute;
+    top:0;
+    border-left:120px solid transparent;
+    border-right:120px solid transparent;
+    border-top:85px solid #f47aa9;
+    transform-origin:top;
+    transition:1s;
+    z-index:5;
 }
 
-.letter-inside{
-
-position:absolute;
-
-width:180px;
-
-height:115px;
-
-background:white;
-
-left:20px;
-
-bottom:0;
-
-border-radius:8px;
-
-transition:1s;
-
+.letter{
+    position:absolute;
+    left:20px;
+    top:20px;
+    width:200px;
+    height:120px;
+    background:white;
+    border-radius:10px;
+    transition:1s;
+    z-index:2;
+    box-shadow:0 5px 20px rgba(0,0,0,.12);
 }
 
 .heart{
-
-position:absolute;
-
-left:50%;
-
-top:55%;
-
-transform:translate(-50%,-50%);
-
-width:52px;
-
-height:52px;
-
-background:#ff477e;
-
-border-radius:50%;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-font-size:24px;
-
-color:white;
-
-z-index:6;
-
-animation:beat 1.4s infinite;
-
-box-shadow:0 5px 15px rgba(0,0,0,.2);
-
-}
-
-.tap{
-
-font-family:'Press Start 2P';
-
-font-size:18px;
-
-margin-top:25px;
-
-color:#666;
-
-}
-
-.credit{
-
-margin-top:55px;
-
-font-size:22px;
-
-color:#777;
-
+    position:absolute;
+    left:50%;
+    top:60%;
+    transform:translate(-50%,-50%);
+    width:56px;
+    height:56px;
+    background:#ff3f7d;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:25px;
+    z-index:10;
+    animation:beat 1.3s infinite;
 }
 
 .open .flap{
-
-transform:rotateX(180deg);
-
+    transform:rotateX(180deg);
 }
 
-.open .letter-inside{
-
-transform:translateY(-120px);
-
+.open .letter{
+    transform:translateY(-90px);
 }
 
-@keyframes beat{
-
-50%{
-
-transform:translate(-50%,-50%) scale(1.12);
-
+.tap{
+    font-family:'Press Start 2P';
+    font-size:18px;
+    color:#666;
+    margin-top:20px;
 }
 
+.credit{
+    margin-top:45px;
+    font-size:22px;
+    color:#777;
 }
 
-@keyframes float{
-
-50%{
-
-transform:translateY(-8px);
-
-}
-
-}
+/* ---------- Petals ---------- */
 
 .petals{
-
-position:fixed;
-
-inset:0;
-
-overflow:hidden;
-
-pointer-events:none;
-
+    position:fixed;
+    inset:0;
+    pointer-events:none;
 }
 
 .petal{
-
-position:absolute;
-
-font-size:20px;
-
-animation:fall linear forwards;
-
+    position:absolute;
+    font-size:22px;
+    animation:fall linear forwards;
 }
 
 @keyframes fall{
-
-0%{
-
-transform:translateY(-10vh) rotate(0deg);
-
+    from{
+        transform:translateY(-10vh) rotate(0deg);
+    }
+    to{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
 }
 
-100%{
-
-transform:translateY(110vh) rotate(360deg);
-
-opacity:0;
-
+@keyframes beat{
+    50%{
+        transform:translate(-50%,-50%) scale(1.15);
+    }
 }
 
+@keyframes float{
+    50%{
+        transform:translateY(-8px);
+    }
 }
