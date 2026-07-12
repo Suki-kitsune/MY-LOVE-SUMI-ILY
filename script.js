@@ -57,6 +57,9 @@ if(envelope){
 
     envelope.addEventListener("click",()=>{
 
+        // Start music when she opens the letter
+        music.play().catch(()=>{});
+
         envelope.classList.add("open");
 
         setTimeout(()=>{
@@ -68,7 +71,6 @@ if(envelope){
     });
 
 }
-
 // =========================================
 // BUTTONS
 // =========================================
