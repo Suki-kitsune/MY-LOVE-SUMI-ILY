@@ -53,24 +53,27 @@ function showPage(page){
 
 const envelope = document.getElementById("envelope");
 
-if(envelope){
+if (envelope) {
 
-    envelope.addEventListener("click",()=>{
+    envelope.addEventListener("click", async () => {
 
-        // Start music when she opens the letter
-        music.play().catch(()=>{});
+        try {
+            music.currentTime = 0;
+            await music.play();
+        } catch (err) {
+            console.error("Music failed:", err);
+        }
 
         envelope.classList.add("open");
 
-        setTimeout(()=>{
-
+        setTimeout(() => {
             showPage(letter);
-
-        },1300);
+        }, 1300);
 
     });
 
 }
+
 // =========================================
 // BUTTONS
 // =========================================
