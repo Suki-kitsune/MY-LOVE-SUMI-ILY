@@ -1130,29 +1130,23 @@ opacity:1;
 
     height:48px;
 
-    padding:0;
-
-    margin:0;
-
     display:flex;
 
     justify-content:center;
 
     align-items:center;
 
-    border:none;
-
-    border-radius:50%;
-
     background:rgba(255,255,255,.75);
 
     backdrop-filter:blur(12px);
 
+    border-radius:50%;
+
     font-size:22px;
 
-    line-height:1;
-
     cursor:pointer;
+
+    user-select:none;
 
     z-index:10000;
 
