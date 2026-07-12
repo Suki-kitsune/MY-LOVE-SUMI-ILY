@@ -90,3 +90,11 @@ document.getElementById("nextBtn").addEventListener("click", () => {
     }, 800);
 
 });
+
+// Secret Fox Easter Egg
+
+document.getElementById("foxSecret").addEventListener("dblclick", () => {
+
+    alert("🦊 You found our little fox!\n\nI love you, Sumi ❤️");
+
+});
