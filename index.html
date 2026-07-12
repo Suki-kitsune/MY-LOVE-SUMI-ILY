@@ -3,69 +3,275 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Letter For You ❤️</title>
+
+<title>My Letter ❤️</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Press+Start+2P&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:linear-gradient(135deg,#ffeef6,#fff8fc);
+font-family:'Cormorant Garamond',serif;
+overflow-x:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:40px 20px;
+}
+
+.petals{
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:1;
+}
+
+.petal{
+position:absolute;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+from{
+transform:translateY(-10vh) rotate(0deg);
+}
+to{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+}
+}
+
+.container{
+position:relative;
+z-index:2;
+width:100%;
+max-width:700px;
+}
+
+.paper{
+background:white;
+padding:55px 45px;
+border-radius:25px;
+box-shadow:0 20px 60px rgba(0,0,0,.12);
+animation:slideUp 1s ease;
+}
+
+@keyframes slideUp{
+from{
+opacity:0;
+transform:translateY(60px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+h1{
+font-family:'Press Start 2P';
+color:#f05a93;
+font-size:26px;
+text-align:center;
+margin-bottom:45px;
+line-height:1.6;
+}
+
+#text{
+font-size:34px;
+line-height:1.8;
+color:#555;
+white-space:pre-wrap;
+min-height:430px;
+}
+
+.cursor{
+display:inline-block;
+animation:blink .8s infinite;
+}
+
+@keyframes blink{
+50%{
+opacity:0;
+}
+}
+
+.heart{
+text-align:center;
+font-size:45px;
+margin-top:25px;
+animation:beat 1.3s infinite;
+}
+
+@keyframes beat{
+50%{
+transform:scale(1.15);
+}
+}
+
+.nextBtn{
+display:none;
+margin:50px auto 0;
+padding:18px 45px;
+background:#f05a93;
+color:white;
+border:none;
+border-radius:50px;
+font-size:20px;
+cursor:pointer;
+transition:.3s;
+font-family:'Press Start 2P';
+}
+
+.nextBtn:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 25px rgba(240,90,147,.35);
+}
+
+@media(max-width:700px){
+
+.paper{
+padding:35px 25px;
+}
+
+h1{
+font-size:18px;
+}
+
+#text{
+font-size:25px;
+}
+
+.nextBtn{
+font-size:14px;
+padding:16px 24px;
+}
+
+}
+
+</style>
+
 </head>
 
 <body>
 
-<div class="background"></div>
-
 <div class="petals"></div>
 
-<section class="intro" id="intro">
+<div class="container">
 
-<div class="card">
+<div class="paper">
 
-<div class="flower">🌸</div>
+<h1>💌 Dear Sumi</h1>
 
-<h2>A Letter For You</h2>
+<div id="text"></div>
 
-<h1>For Sumi ♡</h1>
+<div class="heart">❤️</div>
 
-<p>Every love story starts with a single page...</p>
-
-<p>And ours is my favorite one.</p>
-
-<div class="envelope-container">
-
-<div class="envelope" id="envelope">
-
-<div class="back"></div>
-
-<div class="letter"></div>
-
-<div class="left"></div>
-
-<div class="right"></div>
-
-<div class="bottom"></div>
-
-<div class="flap"></div>
-
-<div class="heart">❤</div>
+<button class="nextBtn" id="nextBtn">
+Next ➜ You & Me ❤️
+</button>
 
 </div>
 
 </div>
 
-<div class="tap">Tap to Open</div>
+<script>
 
-<div class="credit">
-Made with ❤️ by <b>Tappu</b>
-</div>
+const letter=`Every day with you feels a little brighter.
 
-</div>
+Thank you for being the reason behind so many of my smiles, for making ordinary moments feel special, and for filling my heart with happiness.
 
-</section>
+Being with you has become one of my favorite parts of every day. No matter how busy life gets, you'll always have a special place in my heart.
 
-<script src="script.js"></script>
+When we grow old together, I'll look into your eyes and smile, knowing you were the love of my life.
+
+You are my favorite person, my safe place, and my happiest chapter.
+
+I love you, today, tomorrow, and always. ❤️
+
+Forever yours,
+
+Tappu 🌸`;
+
+const text=document.getElementById("text");
+
+let i=0;
+
+function type(){
+
+if(i<letter.length){
+
+text.innerHTML=letter.substring(0,i)+'<span class="cursor">|</span>';
+
+i++;
+
+setTimeout(type,35);
+
+}
+
+else{
+
+text.innerHTML=letter;
+
+document.getElementById("nextBtn").style.display="block";
+
+}
+
+}
+
+type();
+
+document.getElementById("nextBtn").onclick=()=>{
+
+document.body.style.transition=".8s";
+
+document.body.style.opacity="0";
+
+setTimeout(()=>{
+
+window.location.href="gallery.html";
+
+},800);
+
+};
+
+function createPetal(){
+
+const petal=document.createElement("div");
+
+petal.className="petal";
+
+petal.innerHTML="🌸";
+
+petal.style.left=Math.random()*100+"vw";
+
+petal.style.fontSize=18+Math.random()*18+"px";
+
+petal.style.animationDuration=4+Math.random()*5+"s";
+
+document.querySelector(".petals").appendChild(petal);
+
+setTimeout(()=>{
+
+petal.remove();
+
+},9000);
+
+}
+
+setInterval(createPetal,350);
+
+</script>
 
 </body>
 </html>
