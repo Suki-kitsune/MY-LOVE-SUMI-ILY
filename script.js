@@ -324,3 +324,27 @@ menuItems.forEach(item=>{
     });
 
 });
+
+// =========================
+// MUSIC BUTTON
+// =========================
+
+const musicToggle = document.getElementById("musicToggle");
+
+musicToggle.addEventListener("click",()=>{
+
+    if(music.paused){
+
+        music.play();
+
+        musicToggle.innerHTML="🎵";
+
+    }else{
+
+        music.pause();
+
+        musicToggle.innerHTML="🔇";
+
+    }
+
+});
