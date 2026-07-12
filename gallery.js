@@ -1,53 +1,92 @@
-// Falling Petals
+// =========================
+// Floating Hearts
+// =========================
 
-function createPetal(){
+const hearts = document.querySelector(".hearts");
 
-    const petal=document.createElement("div");
+function createHeart() {
 
-    petal.className="petal";
+    const heart = document.createElement("div");
 
-    petal.innerHTML="🌸";
+    heart.className = "heart";
+    heart.innerHTML = Math.random() > 0.5 ? "❤️" : "💖";
 
-    petal.style.left=Math.random()*100+"vw";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (16 + Math.random() * 16) + "px";
+    heart.style.animationDuration = (5 + Math.random() * 4) + "s";
 
-    petal.style.fontSize=(18+Math.random()*18)+"px";
+    hearts.appendChild(heart);
 
-    petal.style.animationDuration=(4+Math.random()*5)+"s";
-
-    document.querySelector(".petals").appendChild(petal);
-
-    setTimeout(()=>{
-
-        petal.remove();
-
-    },9000);
-
+    setTimeout(() => {
+        heart.remove();
+    }, 9000);
 }
 
-setInterval(createPetal,350);
+setInterval(createHeart, 450);
 
+// =========================
+// Lightbox
+// =========================
 
-// Photo Animation
+const photos = document.querySelectorAll(".photo");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+const closeBtn = document.getElementById("close");
 
-const photos=document.querySelectorAll(".photo");
+photos.forEach(photo => {
 
-photos.forEach((photo,index)=>{
+    photo.addEventListener("click", () => {
 
-    setTimeout(()=>{
+        lightbox.classList.add("show");
+        lightboxImg.src = photo.src;
 
-        photo.classList.add("show");
-
-    },index*350);
+    });
 
 });
 
+closeBtn.addEventListener("click", () => {
 
-// Next Button
+    lightbox.classList.remove("show");
 
-const next=document.getElementById("nextBtn");
+});
 
-next.onclick=()=>{
+lightbox.addEventListener("click", (e) => {
 
-    alert("Our final surprise page is coming next ❤️");
+    if (e.target === lightbox) {
 
-};
+        lightbox.classList.remove("show");
+
+    }
+
+});
+
+// =========================
+// ESC Key Closes Lightbox
+// =========================
+
+document.addEventListener("keydown", (e) => {
+
+    if (e.key === "Escape") {
+
+        lightbox.classList.remove("show");
+
+    }
+
+});
+
+// =========================
+// Continue Button
+// =========================
+
+document.getElementById("nextBtn").addEventListener("click", () => {
+
+    document.body.style.transition = "0.8s";
+    document.body.style.opacity = "0";
+
+    setTimeout(() => {
+
+        window.location.href = "surprise.html";
+
+    }, 800);
+
+});
