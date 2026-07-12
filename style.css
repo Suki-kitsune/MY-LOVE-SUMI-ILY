@@ -265,9 +265,13 @@ button:hover{
 
 .heart{
 
-    font-size:30px;
+font-size:30px;
 
-    animation:heartbeat 1.5s infinite;
+animation:heartbeat 1.5s infinite;
+
+filter:drop-shadow(0 0 10px #ff5b9a);
+
+cursor:pointer;
 
 }
 
