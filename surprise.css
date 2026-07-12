@@ -11,10 +11,12 @@ body{
     min-height:100vh;
     display:flex;
     justify-content:center;
-    align-items:center;
+    align-items:flex-start;
     padding:40px 20px;
-    overflow:hidden;
+    overflow-x:hidden;
+    overflow-y:auto;
     background:linear-gradient(135deg,#ffeef6,#fff8fc);
+    animation:fadeIn 1s ease;
 }
 
 .hearts{
@@ -22,6 +24,7 @@ body{
     inset:0;
     pointer-events:none;
     overflow:hidden;
+    z-index:0;
 }
 
 .heart{
@@ -45,6 +48,8 @@ body{
 }
 
 .container{
+    position:relative;
+    z-index:2;
     width:100%;
     max-width:760px;
     background:white;
@@ -52,8 +57,7 @@ body{
     padding:55px 35px;
     text-align:center;
     box-shadow:0 20px 50px rgba(0,0,0,.12);
-    position:relative;
-    z-index:2;
+    margin:20px 0;
 }
 
 .foxes{
@@ -67,20 +71,17 @@ body{
 }
 
 @keyframes bounce{
-
-0%{
-transform:translateY(0);
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px) scale(1.05);
+    }
+    100%{
+        transform:translateY(0);
+    }
 }
 
-50%{
-transform:translateY(-10px) scale(1.05);
-}
-
-100%{
-transform:translateY(0);
-}
-
-}
 h1{
     margin:15px 0 25px;
     color:#f05a93;
@@ -122,7 +123,7 @@ h1{
 
 #finalCard.show{
     margin-top:40px;
-    max-height:800px;
+    max-height:1000px;
     opacity:1;
 }
 
@@ -142,28 +143,32 @@ h1{
 
 @media(max-width:768px){
 
-h1{
-    font-size:44px;
-}
+    body{
+        padding:25px 15px;
+    }
 
-.foxes,
-.bigFox{
-    font-size:55px;
-}
+    .container{
+        padding:35px 20px;
+    }
 
-#typing,
-#finalCard p{
-    font-size:18px;
-}
+    h1{
+        font-size:44px;
+    }
 
-#loveBtn{
-    width:100%;
-}
+    .foxes,
+    .bigFox{
+        font-size:55px;
+    }
 
-}
+    #typing,
+    #finalCard p{
+        font-size:18px;
+    }
 
-body{
-    animation:fadeIn 1s ease;
+    #loveBtn{
+        width:100%;
+    }
+
 }
 
 @keyframes fadeIn{
