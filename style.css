@@ -1121,9 +1121,11 @@ opacity:1;
 
     position:fixed;
 
-    top:18px;
+    top:20px;
 
-    right:18px;
+    left:20px;
+
+    right:auto;
 
     width:48px;
 
