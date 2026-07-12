@@ -521,6 +521,8 @@ padding:12px 14px;
 
     cursor:pointer;
 
+   z-index:100;
+   
     transition:.35s;
 
     animation:floatEnvelope 3s ease-in-out infinite;
