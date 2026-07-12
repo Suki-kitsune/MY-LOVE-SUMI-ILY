@@ -88,7 +88,10 @@ btn.addEventListener("click",()=>{
 
     card.classList.add("show");
 
-    btn.textContent="Forever ❤️";
+btn.textContent="Forever ❤️";
+btn.disabled = true;
+btn.style.opacity = "0.7";
+btn.style.cursor = "default";
 
     burst();
 
