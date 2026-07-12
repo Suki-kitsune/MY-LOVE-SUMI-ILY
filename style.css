@@ -1112,3 +1112,46 @@ opacity:1;
     display:block;
 
 }
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+#musicToggle{
+
+    position:fixed;
+
+    top:20px;
+
+    right:20px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(10px);
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    z-index:10000;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+
+    transition:.3s;
+
+}
+
+#musicToggle:hover{
+
+    transform:scale(1.08);
+
+}
