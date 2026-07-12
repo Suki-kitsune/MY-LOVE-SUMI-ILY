@@ -1,201 +1,353 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:'Cormorant Garamond',serif;
     background:linear-gradient(135deg,#ffeef6,#fff6fb);
     overflow-x:hidden;
-    overflow-y:auto;
     min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
-    padding:40px 15px;
 }
 
-.card{
-    width:100%;
-    max-width:430px;
-    background:#fff;
-    border-radius:30px;
-    padding:45px 25px;
-    box-shadow:0 20px 50px rgba(0,0,0,.08);
-    text-align:center;
-    position:relative;
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    background:linear-gradient(135deg,#ffeef6,#fff6fb);
 }
 
-.flower{
-    font-size:45px;
-    margin-bottom:15px;
-}
-
-h2{
-    color:#c090df;
-    font-size:58px;
-    font-style:italic;
-    margin-bottom:30px;
-}
-
-h1{
-    font-family:'Press Start 2P',cursive;
-    color:#f05a93;
-    font-size:27px;
-    line-height:1.5;
-    margin-bottom:35px;
-}
-
-p{
-    color:#777;
-    font-size:28px;
-    line-height:1.5;
-    margin:20px 0;
-}
-
-/* ---------- Envelope ---------- */
-
-.envelope-container{
-    display:flex;
-    justify-content:center;
-    margin:45px 0;
-}
-
-.envelope{
-    width:240px;
-    height:160px;
-    position:relative;
-    cursor:pointer;
-    animation:float 3s ease-in-out infinite;
-}
-
-.back{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:#ec6ea2;
-    border-radius:0 0 12px 12px;
-}
-
-.left{
-    position:absolute;
-    border-left:120px solid #f08ab5;
-    border-top:80px solid transparent;
-    border-bottom:80px solid transparent;
-}
-
-.right{
-    position:absolute;
-    right:0;
-    border-right:120px solid #e35d93;
-    border-top:80px solid transparent;
-    border-bottom:80px solid transparent;
-}
-
-.bottom{
-    position:absolute;
-    bottom:0;
-    border-left:120px solid transparent;
-    border-right:120px solid transparent;
-    border-bottom:80px solid #f7a1c3;
-}
-
-.flap{
-    position:absolute;
-    top:0;
-    border-left:120px solid transparent;
-    border-right:120px solid transparent;
-    border-top:85px solid #f47aa9;
-    transform-origin:top;
-    transition:1s;
-    z-index:5;
-}
-
-.letter{
-    position:absolute;
-    left:20px;
-    top:20px;
-    width:200px;
-    height:120px;
-    background:white;
-    border-radius:10px;
-    transition:1s;
-    z-index:2;
-    box-shadow:0 5px 20px rgba(0,0,0,.12);
-}
-
-.heart{
-    position:absolute;
-    left:50%;
-    top:60%;
-    transform:translate(-50%,-50%);
-    width:56px;
-    height:56px;
-    background:#ff3f7d;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    font-size:25px;
-    z-index:10;
-    animation:beat 1.3s infinite;
-}
-
-.open .flap{
-    transform:rotateX(180deg);
-}
-
-.open .letter{
-    transform:translateY(-90px);
-}
-
-.tap{
-    font-family:'Press Start 2P';
-    font-size:18px;
-    color:#666;
-    margin-top:20px;
-}
-
-.credit{
-    margin-top:45px;
-    font-size:22px;
-    color:#777;
-}
-
-/* ---------- Petals ---------- */
+/* =====================================================
+   PETALS
+===================================================== */
 
 .petals{
     position:fixed;
     inset:0;
     pointer-events:none;
+    overflow:hidden;
+    z-index:999;
 }
 
 .petal{
     position:absolute;
-    font-size:22px;
     animation:fall linear forwards;
 }
 
 @keyframes fall{
+
     from{
         transform:translateY(-10vh) rotate(0deg);
+        opacity:1;
     }
+
     to{
         transform:translateY(110vh) rotate(360deg);
         opacity:0;
     }
+
 }
 
-@keyframes beat{
-    50%{
-        transform:translate(-50%,-50%) scale(1.15);
-    }
+/* =====================================================
+   INDEX PAGE
+===================================================== */
+
+.intro{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+
+    padding:40px 15px;
+
 }
 
-@keyframes float{
-    50%{
-        transform:translateY(-8px);
-    }
+.card{
+
+    width:100%;
+    max-width:430px;
+
+    background:#fff;
+
+    border-radius:30px;
+
+    padding:45px 25px;
+
+    text-align:center;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.08);
+
 }
+
+.flower{
+
+    font-size:45px;
+
+    margin-bottom:15px;
+
+}
+
+h2{
+
+    color:#c090df;
+
+    font-size:58px;
+
+    font-style:italic;
+
+    margin-bottom:30px;
+
+}
+
+h1{
+
+    font-family:'Press Start 2P',cursive;
+
+    color:#f05a93;
+
+    font-size:27px;
+
+    line-height:1.5;
+
+    margin-bottom:35px;
+
+}
+
+.card p{
+
+    color:#777;
+
+    font-size:28px;
+
+    line-height:1.5;
+
+    margin:20px 0;
+
+}
+
+/* =====================================================
+   ENVELOPE
+===================================================== */
+
+.envelope-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin:45px 0;
+
+}
+
+.envelope{
+
+    width:240px;
+
+    height:160px;
+
+    position:relative;
+
+    cursor:pointer;
+
+    animation:float 3s ease-in-out infinite;
+
+    transition:.5s;
+
+}
+
+.envelope:hover{
+
+    transform:scale(1.03);
+
+}
+
+.back{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    background:#ec6ea2;
+
+    border-radius:0 0 12px 12px;
+
+}
+
+.left{
+
+    position:absolute;
+
+    border-left:120px solid #f08ab5;
+
+    border-top:80px solid transparent;
+
+    border-bottom:80px solid transparent;
+
+}
+
+.right{
+
+    position:absolute;
+
+    right:0;
+
+    border-right:120px solid #e35d93;
+
+    border-top:80px solid transparent;
+
+    border-bottom:80px solid transparent;
+
+}
+
+.bottom{
+
+    position:absolute;
+
+    bottom:0;
+
+    border-left:120px solid transparent;
+
+    border-right:120px solid transparent;
+
+    border-bottom:80px solid #f7a1c3;
+
+}
+
+.flap{
+
+    position:absolute;
+
+    top:0;
+
+    border-left:120px solid transparent;
+
+    border-right:120px solid transparent;
+
+    border-top:85px solid #f47aa9;
+
+    transform-origin:top;
+
+    transition:1s;
+
+    z-index:5;
+
+}
+
+.letter{
+
+    position:absolute;
+
+    left:20px;
+
+    top:20px;
+
+    width:200px;
+
+    height:120px;
+
+    background:white;
+
+    border-radius:10px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.12);
+
+    transition:1s;
+
+    z-index:2;
+
+}
+
+.heart{
+
+    position:absolute;
+
+    left:50%;
+
+    top:60%;
+
+    transform:translate(-50%,-50%);
+
+    width:56px;
+
+    height:56px;
+
+    background:#ff3f7d;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#fff;
+
+    font-size:25px;
+
+    z-index:10;
+
+    animation:beat 1.3s infinite;
+
+}
+
+.open .flap{
+
+    transform:rotateX(180deg);
+
+}
+
+.open .letter{
+
+    transform:translateY(-90px);
+
+}
+
+.tap{
+
+    font-family:'Press Start 2P';
+
+    font-size:18px;
+
+    color:#666;
+
+    margin-top:20px;
+
+}
+
+.credit{
+
+    margin-top:45px;
+
+    font-size:22px;
+
+    color:#777;
+
+}
+
+/* Part 1 */
+
+/* ... */
+
+/* credit{
+   ...
+} */
+
+/* ---------- Paste Part 2 here ---------- */
+
+/* Part 2 */
+
+/* ... */
