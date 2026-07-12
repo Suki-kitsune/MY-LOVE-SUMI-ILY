@@ -179,8 +179,15 @@ button:hover{
 }
 
 .gallery img:hover{
-    transform:scale(1.05);
-    box-shadow:0 16px 30px rgba(234,93,137,.25);
+
+    transform:scale(1.05) rotate(2deg);
+
+}
+
+.gallery img:active{
+
+    transform:scale(.95);
+
 }
 
 /* =========================
