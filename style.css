@@ -1122,13 +1122,23 @@ opacity:1;
 
     position:fixed;
 
-    top:20px;
+    top:18px;
 
-    right:20px;
+    right:18px;
 
-    width:55px;
+    width:48px;
 
-    height:55px;
+    height:48px;
+
+    padding:0;
+
+    margin:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
 
     border:none;
 
@@ -1136,9 +1146,11 @@ opacity:1;
 
     background:rgba(255,255,255,.75);
 
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(12px);
 
-    font-size:24px;
+    font-size:22px;
+
+    line-height:1;
 
     cursor:pointer;
 
