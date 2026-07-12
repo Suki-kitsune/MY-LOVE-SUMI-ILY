@@ -67,11 +67,20 @@ body{
 }
 
 @keyframes bounce{
-    50%{
-        transform:translateY(-8px);
-    }
+
+0%{
+transform:translateY(0);
 }
 
+50%{
+transform:translateY(-10px) scale(1.05);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
 h1{
     margin:15px 0 25px;
     color:#f05a93;
@@ -151,4 +160,17 @@ h1{
     width:100%;
 }
 
+}
+
+body{
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
 }
