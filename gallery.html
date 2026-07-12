@@ -1,58 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Memories ❤️</title>
 
-<title>You & Me ❤️</title>
+    <link rel="stylesheet" href="gallery.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Press+Start+2P&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="gallery.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<div class="petals"></div>
+    <!-- Floating Hearts -->
+    <div class="hearts"></div>
 
-<div class="container">
+    <!-- Main Container -->
+    <section class="gallery-container">
 
-    <h1>You & Me ❤️</h1>
+        <h1 class="title">Our Beautiful Memories ❤️</h1>
 
-    <p class="subtitle">
-        Every picture reminds me how lucky I am to have you.
-    </p>
+        <p class="subtitle">
+            Every picture tells a little story...
+            and every story reminds me how lucky I am to have you.
+        </p>
 
-    <div class="gallery">
+        <!-- Scrapbook -->
+        <div class="scrapbook">
 
-        <div class="photo">
-            <img src="photo1.jpg" alt="">
+            <!-- Photo 1 -->
+            <div class="photo-card left reveal">
+                <div class="tape"></div>
+                <img src="photo1.jpg" alt="Memory 1">
+                <p>
+                    The beginning of countless beautiful memories together. ❤️
+                </p>
+            </div>
+
+            <!-- Photo 2 -->
+            <div class="photo-card right reveal">
+                <div class="tape"></div>
+                <img src="photo2.jpg" alt="Memory 2">
+                <p>
+                    Every smile of yours makes my whole day brighter. 🌸
+                </p>
+            </div>
+
+            <!-- Photo 3 -->
+            <div class="photo-card left reveal">
+                <div class="tape"></div>
+                <img src="photo3.jpg" alt="Memory 3">
+                <p>
+                    I wish every moment could stay forever like this. 💕
+                </p>
+            </div>
+
+            <!-- Photo 4 -->
+            <div class="photo-card right reveal">
+                <div class="tape"></div>
+                <img src="photo4.jpg" alt="Memory 4">
+                <p>
+                    No matter where life takes us, I'll always choose you. 💖
+                </p>
+            </div>
+
         </div>
 
-        <div class="photo">
-            <img src="photo2.jpg" alt="">
+        <!-- Ending -->
+        <div class="ending reveal">
+            <h2>But wait...</h2>
+
+            <p>
+                I still have one last surprise waiting for you...
+            </p>
+
+            <button id="nextBtn">
+                Continue ❤️
+            </button>
         </div>
 
-        <div class="photo">
-            <img src="photo3.jpg" alt="">
-        </div>
+    </section>
 
-        <div class="photo">
-            <img src="photo4.jpg" alt="">
-        </div>
-
-    </div>
-
-    <button id="nextBtn">
-        Next →
-    </button>
-
-</div>
-
-<script src="gallery.js"></script>
+    <script src="gallery.js"></script>
 
 </body>
 </html>
