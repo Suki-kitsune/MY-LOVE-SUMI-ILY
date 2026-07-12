@@ -34,6 +34,22 @@ body{
 
 .page.active{
     display:flex;
+    animation:fadePage .7s ease;
+}
+
+@keyframes fadePage{
+
+from{
+    opacity:0;
+    transform:translateY(20px);
+}
+
+to{
+    opacity:1;
+    transform:translateY(0);
+}
+
+}
 }
 
 /* =========================
